@@ -1,42 +1,14 @@
 import React from "react";
-import logo from "./logo.svg";
-import DATA from "./datos";
+ import DATA from "./datos";
 import VistaPrincipal from "./components/VistaPrincipal";
 import Informacion from "./components/Info";
-import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
+
 
 import "./App.css";
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    flexDirection: "column",
-    minHeight: "100vh",
-    backgroundColor: theme.palette.background.paper,
-  },
-  main: {
-    marginTop: theme.spacing(8),
-    marginBottom: theme.spacing(2),
-    backgroundColor: theme.palette.type === "light"
-    ? theme.palette.grey[200]
-    : theme.palette.grey[800],
-  },
-  footer: {
-    padding: theme.spacing(3, 2),
-    marginTop: "auto",
-    backgroundColor:
-      theme.palette.type === "light"
-        ? theme.palette.grey[200]
-        : theme.palette.grey[800],
-  },
-}));
+
 
 function App() {
-  const classes = useStyles();
+
 
   return (
     <div className="container col-md-11">

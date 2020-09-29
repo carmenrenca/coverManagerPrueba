@@ -37,8 +37,7 @@ export default function CustomFloors({ floor, zona, table, ...props }) {
             <TransformComponent>
               <div className="col-md ">
                 <div className="example-text">
-                  <h4 className="textprueba">{floor.name}</h4>
-
+ 
                   {zona.map((e) => (
                     <React.Fragment>
                       <div>
