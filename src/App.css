@@ -157,7 +157,16 @@ text-transform: uppercase;
   border:1px solid rgb(19, 19, 19);
 
 }
- 
+ .textprueba{
+  position:absolute;
+  width:313px;
+  height:383px;
+  left:50%;
+  top:50%;
+  margin-left:-156px;/*half of width*/
+  margin-top:-191px;/*half of height*/
+  display:none;
+ }
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react'
- import CustomFloors from '../../custom/CustomFloors';
-import TablePagination from '@material-ui/core/TablePagination';
-import Button from '@material-ui/core/Button';
+ import CustomFloors from './custom/CustomFloors';
+ import Button from '@material-ui/core/Button';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import DATA from '../../datos';
  
@@ -45,10 +44,10 @@ export default function VistaPrincipal({ ...props }) {
 
                     </div>
                     <div class="project-info row">
-                      <div className="  ml-md-2 col-md-9">
-                      <h4 >{DATA.floors[Selectplanta].name}</h4>
+                      <div className="  ml-md-2 col-md-7">
+                      <h4 >{DATA.floors[Selectplanta].name+", Zona "+ zonas.map(z=>(z.name+" "))}</h4>
                       
-                        <p>Zonas: {zonas.map(z=>(z.name+" "))}</p> 
+                       
                       </div>
                     
  
