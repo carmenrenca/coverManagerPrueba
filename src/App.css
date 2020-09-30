@@ -136,6 +136,11 @@
   border: 1px solid rgb(19, 19, 19);
 }
 
+li {
+  text-decoration: none;                
+
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

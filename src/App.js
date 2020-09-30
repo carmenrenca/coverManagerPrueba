@@ -2,6 +2,11 @@ import React from "react";
  import DATA from "./datos";
 import VistaPrincipal from "./components/VistaPrincipal";
 import Informacion from "./components/Info";
+import CustomTable from './custom/CustomTable';
+
+import CustonDialog from './custom/CustonDialog';
+
+
 
 
 import "./App.css";
@@ -9,9 +14,45 @@ import "./App.css";
 
 function App() {
 
+ 
+  const tableActions = [
+    {
+      icon: 'visibility',
+      tooltip: 'Ver/Editar',
+      iconProps: {
+        color: 'primary'
+      },
+    onClick: (event, rowData) =><CustonDialog/>
+    },
 
+
+
+    {
+      icon: 'clear',
+      tooltip: 'Eliminar',
+      iconProps: {
+        color: 'error'
+      },
+  //    onClick: (event, rowData) => handleDelete(rowData),
+    },
+
+  ]
+  const columns = [
+   
+    {
+      field: 'id_floor',
+      title: 'ID PLANTA'
+    },
+    {
+      field: 'name',
+      title: 'NOMBRE PLANTA'
+    },
+    
+    
+  ];
   return (
     <div className="container col-md-11">
+      
          <header id="header">
 <div class="logo">
     <h1>CoverManager</h1>
@@ -28,8 +69,16 @@ function App() {
 
 
         <VistaPrincipal />
-
-        
+        <div style={{ margin: '2%' }} className="col-md-10">
+          <CustomTable
+            columns={columns}
+            data={DATA.floors}
+            title="Plantas del resturante"
+            tableActions={tableActions}
+            hasFilters
+         
+          />
+        </div>
 
         </div>
  

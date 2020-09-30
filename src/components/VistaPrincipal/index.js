@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react'
- import CustomFloors from './custom/CustomFloors';
+ import CustomFloors from '../../custom/CustomFloors';
  import Button from '@material-ui/core/Button';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import DATA from '../../datos';
@@ -56,7 +56,6 @@ export default function VistaPrincipal({ ...props }) {
                         </Button>
                     </div>
                 </article>
-
  
 
  
