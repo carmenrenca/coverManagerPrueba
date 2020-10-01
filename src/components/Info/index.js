@@ -55,6 +55,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Informacion({ zonas, tables, ...props }) {
+
+  //COMPONENTE QUE MUESTRA EL LISTADO DE LAS MESAS CON SU INFORMACIÓN Y FILTRADO 
+  
   const classes = useStyles();
   const [mesas, setmesas] = React.useState([]);
   const [search, setsearch] = React.useState("");
@@ -85,17 +88,20 @@ export default function Informacion({ zonas, tables, ...props }) {
         </ListItem>
       </List>
       <Divider />
-      <List
+ 
+<div className="col-9 col-md mx-auto">
+<List
         component="nav"
         aria-label="secondary mailbox folders"
         className={classes.listmesa}
       >
         {mesas.filter(buscador(search)).map((res) => (
-         
-            <OverlayTrigger  key={res.id_table}
+      
+<OverlayTrigger  
               trigger="click"
               rootClose
               placement="right"
+              
               overlay={  <Tooltip id="overlay-example" {...props}>
               <ListItem>ID Mesa: {res.id_table}</ListItem>
               <ListItem>ID Zona: {res.id_zone}</ListItem>
@@ -103,14 +109,24 @@ export default function Informacion({ zonas, tables, ...props }) {
               <ListItem>Eje y: {res.y}</ListItem>
 
             </Tooltip>}
+
+
             >
                <ListItem button  key={`item-${res.id_table} ` } className={classes.lista}>
               <Button  variant="outlined"className="col">{res.name_table}</Button>
               </ListItem>
             </OverlayTrigger>
+
+
+    
+            
+ 
           
         ))}
       </List>
+</div>
+     
+   
     </div>
   );
 }

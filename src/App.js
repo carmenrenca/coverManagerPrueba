@@ -38,7 +38,7 @@ function App() {
         {/**SEGUNDO LISTADO DE LAS MESAS */}
 
 
-          <div className=" col-md-3  border mr-md-4 m-3 bordesCustom listaMesas">
+          <div className=" col-md-3  border mr-md-4 m-3 col-9 bordesCustom listaMesas">
             <Informacion zonas={DATA.zones} tables={DATA.tables} />
           </div>
 
