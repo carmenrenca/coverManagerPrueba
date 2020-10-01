@@ -10,10 +10,9 @@ export default function VistaPrincipal({ ...props }) {
   const [zonas, setzonas] = React.useState([]);
 
   useEffect(() => {
-    //Al iniciar el componente cargamos todas las plantas y las guardamos en el estado 
+    //Al iniciar el componente cargamos todas las plantas y las guardamos en el estado
     setplanta(DATA.floors);
   }, []);
-
 
   useEffect(() => {
     //De forma que cambiemos de planta en el bucle se irán guardando las zonas de la planta
@@ -23,8 +22,7 @@ export default function VistaPrincipal({ ...props }) {
     );
   }, [Selectplanta]);
 
-
-  //funcion en la que vamos recorriendo en bucle todo el array de plantas 
+  //funcion en la que vamos recorriendo en bucle todo el array de plantas
   function increment() {
     if (Selectplanta < planta.length - 1) {
       setSelectplanta(Selectplanta + 1);
@@ -49,7 +47,7 @@ export default function VistaPrincipal({ ...props }) {
             <h4>
               {DATA.floors[Selectplanta].name +
                 ", Zona " +
-              zonas.map((z) =>   z.name + " " )}
+                zonas.map((z) => z.name + " ")}
             </h4>
           </div>
 

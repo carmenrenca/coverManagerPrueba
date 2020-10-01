@@ -7,7 +7,7 @@ import ListItem from "@material-ui/core/ListItem";
 import Divider from "@material-ui/core/Divider";
 import TextField from "@material-ui/core/TextField";
 import Popover from "react-bootstrap/Popover";
-import Tooltip from 'react-bootstrap/Tooltip'
+import Tooltip from "react-bootstrap/Tooltip";
 import Button from "react-bootstrap/Button";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 const useStyles = makeStyles((theme) => ({
@@ -45,9 +45,9 @@ const useStyles = makeStyles((theme) => ({
   },
 
   lista: {
-    width:'60%',
+    width: "60%",
     alignContent: "center",
-    display: 'inline-flex'
+    display: "inline-flex",
   },
   buscador: {
     alignContent: "center",
@@ -55,14 +55,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Informacion({ zonas, tables, ...props }) {
+  //COMPONENTE QUE MUESTRA EL LISTADO DE LAS MESAS CON SU INFORMACIÓN Y FILTRADO
 
-  //COMPONENTE QUE MUESTRA EL LISTADO DE LAS MESAS CON SU INFORMACIÓN Y FILTRADO 
-  
   const classes = useStyles();
   const [mesas, setmesas] = React.useState([]);
   const [search, setsearch] = React.useState("");
 
- 
   useEffect(() => {
     setmesas(tables);
   }, [tables]);
@@ -76,7 +74,7 @@ export default function Informacion({ zonas, tables, ...props }) {
     <div>
       <List component="nav" aria-label="main mailbox folders">
         <h2 className={classes.title}>Listado de mesas</h2>
-        
+
         <ListItem>
           <TextField
             className="col-md"
@@ -88,45 +86,40 @@ export default function Informacion({ zonas, tables, ...props }) {
         </ListItem>
       </List>
       <Divider />
- 
-<div className="col-9 col-md mx-auto">
-<List
-        component="nav"
-        aria-label="secondary mailbox folders"
-        className={classes.listmesa}
-      >
-        {mesas.filter(buscador(search)).map((res) => (
-      
-<OverlayTrigger  
+
+      <div className="col-9 col-md mx-auto">
+        <List
+          component="nav"
+          aria-label="secondary mailbox folders"
+          className={classes.listmesa}
+        >
+          {mesas.filter(buscador(search)).map((res) => (
+            <OverlayTrigger
               trigger="click"
               rootClose
               placement="right"
-              
-              overlay={  <Tooltip id="overlay-example" {...props}>
-              <ListItem>ID Mesa: {res.id_table}</ListItem>
-              <ListItem>ID Zona: {res.id_zone}</ListItem>
-              <ListItem>Eje x: {res.x}</ListItem>
-              <ListItem>Eje y: {res.y}</ListItem>
-
-            </Tooltip>}
-
-
+              overlay={
+                <Tooltip id="overlay-example" {...props}>
+                  <ListItem>ID Mesa: {res.id_table}</ListItem>
+                  <ListItem>ID Zona: {res.id_zone}</ListItem>
+                  <ListItem>Eje x: {res.x}</ListItem>
+                  <ListItem>Eje y: {res.y}</ListItem>
+                </Tooltip>
+              }
             >
-               <ListItem button  key={`item-${res.id_table} ` } className={classes.lista}>
-              <Button  variant="outlined"className="col">{res.name_table}</Button>
+              <ListItem
+                button
+                key={`item-${res.id_table} `}
+                className={classes.lista}
+              >
+                <Button variant="outlined" className="col">
+                  {res.name_table}
+                </Button>
               </ListItem>
             </OverlayTrigger>
-
-
-    
-            
- 
-          
-        ))}
-      </List>
-</div>
-     
-   
+          ))}
+        </List>
+      </div>
     </div>
   );
 }

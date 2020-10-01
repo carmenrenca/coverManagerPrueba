@@ -9,8 +9,7 @@ import ZoomOutIcon from "@material-ui/icons/ZoomOut";
 import ZoomOutMapIcon from "@material-ui/icons/ZoomOutMap";
 
 export default function CustomFloors({ floor, zona, table, ...props }) {
-
-  //COMPONENTE EN EL QUE SE DIBUJARÁ LA PLANTA CON SUS ZONAS Y MESAS CORRESPODIENTES 
+  //COMPONENTE EN EL QUE SE DIBUJARÁ LA PLANTA CON SUS ZONAS Y MESAS CORRESPODIENTES
   //AÑADIENDO EL ZOOM
 
   return (
@@ -42,16 +41,13 @@ export default function CustomFloors({ floor, zona, table, ...props }) {
               <div className="col-md ">
                 <div className="example-text">
                   {zona.map((e) => (
-                    
-                      <div key={e.id_zone}>
-                        
-                        {table
-                          .filter((a) => a.id_zone === e.id_zone)
-                          .map((t) => (
-                            <CustomMesas table={t} />
-                          ))}
-                      </div>
-                
+                    <div key={e.id_zone}>
+                      {table
+                        .filter((a) => a.id_zone === e.id_zone)
+                        .map((t) => (
+                          <CustomMesas table={t} />
+                        ))}
+                    </div>
                   ))}
                 </div>
               </div>
