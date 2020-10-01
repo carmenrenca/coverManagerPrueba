@@ -42,7 +42,7 @@ export default function VistaPrincipal({ ...props }) {
             table={DATA.tables}
           />
         </div>
-        <div className="project-info row">
+        <div className="project-info  ">
           <div className="  ml-md-2 col-md-8">
             <h4>
               {DATA.floors[Selectplanta].name +
@@ -54,7 +54,7 @@ export default function VistaPrincipal({ ...props }) {
           <Button
             variant="outlined"
             color="primary"
-            className="float-right  ml-md-5"
+            className="float-right  mb-3 "
             variant="contained"
             onClick={increment}
             startIcon={<ChevronRightIcon />}

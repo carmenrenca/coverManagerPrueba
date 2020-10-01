@@ -20,10 +20,11 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     position: "relative",
     overflow: "auto",
-    maxHeight: 304,
+    maxHeight: 311,
     textAlign: "center",
     alignContent: "center",
     alignItems: "center",
+    marginTop:4
   },
   listSection: {
     backgroundColor: "inherit",
