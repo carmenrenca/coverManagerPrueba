@@ -22,6 +22,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function CustomMesas({ table, ...props }) {
+
+  //COMPONENTE PARA CREAR LAS MESAS A EL CUAL LE PASO LA MESA CONCRETA CON TODOS SUS DATOS 
+
   const classes = useStyles();
 
   return (

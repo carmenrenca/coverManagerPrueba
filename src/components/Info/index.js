@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     position: "relative",
     overflow: "auto",
-    maxHeight: 380,
+    maxHeight: 304,
     textAlign: "center",
     alignContent: "center",
     alignItems: "center",
@@ -92,10 +92,10 @@ export default function Informacion({ zonas, tables, ...props }) {
       >
         {mesas.filter(buscador(search)).map((res) => (
          
-            <OverlayTrigger  
+            <OverlayTrigger  key={res.id_table}
               trigger="click"
               rootClose
-              placement="left"
+              placement="right"
               overlay={  <Tooltip id="overlay-example" {...props}>
               <ListItem>ID Mesa: {res.id_table}</ListItem>
               <ListItem>ID Zona: {res.id_zone}</ListItem>

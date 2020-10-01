@@ -9,6 +9,10 @@ import ZoomOutIcon from "@material-ui/icons/ZoomOut";
 import ZoomOutMapIcon from "@material-ui/icons/ZoomOutMap";
 
 export default function CustomFloors({ floor, zona, table, ...props }) {
+
+  //COMPONENTE EN EL QUE SE DIBUJARÁ LA PLANTA CON SUS ZONAS Y MESAS CORRESPODIENTES 
+  //AÑADIENDO EL ZOOM
+
   return (
     <React.Fragment>
       <TransformWrapper>
@@ -37,17 +41,17 @@ export default function CustomFloors({ floor, zona, table, ...props }) {
             <TransformComponent>
               <div className="col-md ">
                 <div className="example-text">
- 
                   {zona.map((e) => (
-                    <React.Fragment>
-                      <div>
+                    
+                      <div key={e.id_zone}>
+                        
                         {table
                           .filter((a) => a.id_zone === e.id_zone)
                           .map((t) => (
                             <CustomMesas table={t} />
                           ))}
                       </div>
-                    </React.Fragment>
+                
                   ))}
                 </div>
               </div>

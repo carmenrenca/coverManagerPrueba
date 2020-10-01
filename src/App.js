@@ -1,98 +1,59 @@
 import React from "react";
- import DATA from "./datos";
+import DATA from "./datos";
 import VistaPrincipal from "./components/VistaPrincipal";
 import Informacion from "./components/Info";
-import CustomTable from './custom/CustomTable';
-
-import CustonDialog from './custom/CustonDialog';
-
-
-
-
+ 
 import "./App.css";
 
-
 function App() {
-
- 
-  const tableActions = [
-    {
-      icon: 'visibility',
-      tooltip: 'Ver/Editar',
-      iconProps: {
-        color: 'primary'
-      },
-    onClick: (event, rowData) =><CustonDialog/>
-    },
-
-
-
-    {
-      icon: 'clear',
-      tooltip: 'Eliminar',
-      iconProps: {
-        color: 'error'
-      },
-  //    onClick: (event, rowData) => handleDelete(rowData),
-    },
-
-  ]
   const columns = [
-   
     {
-      field: 'id_floor',
-      title: 'ID PLANTA'
+      field: "id_floor",
+      title: "ID PLANTA",
     },
     {
-      field: 'name',
-      title: 'NOMBRE PLANTA'
+      field: "name",
+      title: "NOMBRE PLANTA",
     },
-    
-    
   ];
   return (
-    <div className="container col-md-11">
-      
-         <header id="header">
-<div class="logo">
-    <h1>CoverManager</h1>
-</div>
- 
-        </header>
 
-        <section id="content">
-     
+    <div className="container col-md-11">
+    {/**--INICIO DE LA CABECERA--*/}
+      <header id="header">
+        <div className="logo">
+          <h1>CoverManager</h1>
+        </div>
+      </header>
+    {/**--FIN DE LA CABECERA--*/}
+
+    {/**INICIO DEL CONTENIDO */}
+      <section id="content">
         <div className="row justify-content-center mb-4   ">
-        <div className="m-1 col-md-3  border mr-md-4">
+
+        {/**PRIMER COMPONENTE MAPA DE LA DISPOSICIÓN DE LAS MESAS */}
+
+        <VistaPrincipal />
+
+        {/**SEGUNDO LISTADO DE LAS MESAS */}
+
+
+          <div className=" col-md-3  border mr-md-4 m-3 bordesCustom listaMesas">
             <Informacion zonas={DATA.zones} tables={DATA.tables} />
           </div>
 
-
-        <VistaPrincipal />
-        <div style={{ margin: '2%' }} className="col-md-10">
-          <CustomTable
-            columns={columns}
-            data={DATA.floors}
-            title="Plantas del resturante"
-            tableActions={tableActions}
-            hasFilters
-         
-          />
-        </div>
-
-        </div>
- 
       
-      <footer id="footer">
-          <div class="logo">CoverManager
-                </div>
-                <div class="info">
-                   Prueba de acceso Carmen Rendon &copy;
-                </div>
-      </footer>
+        </div>
 
-        </section>
-    
+    {/**INICIO PIE DE PÁGINA */}
+        <footer id="footer">
+          <div className="logo">CoverManager</div>
+          <div className="info">Prueba de acceso Carmen Rendón &copy;</div>
+        </footer>
+      </section>
+    {/**FIN PIE DE PÁGINA */}
+
+  {/**FIN DEL CONTENIDO */}
     </div>
   );
 }
